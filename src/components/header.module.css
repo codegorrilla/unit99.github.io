@@ -1,0 +1,12 @@
+ul.nav {
+  padding: 1em 0;
+}
+ul.nav li a {
+  padding: 1em;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+ul.nav li a:hover, ul.nav li a:focus {
+  color: #DCDBDB;
+}
+/*# sourceMappingURL=header.module.css.map */

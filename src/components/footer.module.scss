@@ -1,0 +1,48 @@
+@use '../scss/partials/grid' as *;
+
+footer {
+  ul {
+    &.socialnav {
+      padding: 1em 0;
+
+      li {
+        padding: 0 1.4em;
+        a {
+          background-repeat: no-repeat;
+          background-position: center;
+          padding: 1em;
+          font-size: 0;
+          color: rgba(black, 0);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@include mq(mobile) {
+  ul.socialnav {
+    display: flex;
+    justify-content: center;
+
+    li {
+      a {
+        transform: scale(0.7, 0.7);
+        transform-origin: center;
+        transition: transform linear 0.3s;
+      }
+    }
+  }
+}
+
+@include mq(desktop){
+    ul.socialnav{
+        li{
+            a{
+                transform: scale(1);
+            }
+        }
+    }
+}

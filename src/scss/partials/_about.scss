@@ -1,0 +1,134 @@
+@use 'grid' as *;
+
+.resume_about {
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  opacity: 1;
+  transition: all ease-in-out 0.8s;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../img/background.jpg);
+
+  @include mq(mobile) {
+    left: -200vw;
+  }
+
+  @include mq(quad) {
+    left: -80vw;
+  }
+
+  /* hide trigger */
+  .hide_trigger {
+    float: right;
+    opacity: 0;
+    padding: 2em 0;
+    cursor: pointer;
+    display: inline-block;
+    background-image: url(../svg/arrowleft.svg);
+    background-repeat: no-repeat;
+    background-position: left 50%;
+
+    span {
+      padding: 0 2em;
+      transition: color linear 0.2s;
+      color: #818080;
+      
+      @include mq(mobile){
+        color: transparent;
+      }
+
+      @include mq(desktop){
+        font-size: 1.2rem;
+      }
+
+      @include mq(quad){
+        font-size: 1.5rem;
+      }
+
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+  }
+
+  &:target {
+    left: 0;
+
+    .hide_trigger {
+      opacity: 1;
+    }
+  }
+
+  @include mq(mobile) {
+    width: 100vw;
+  }
+
+  @include mq(quad) {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  hgroup,
+  .resume_contact {
+    @include mq(mobile) {
+      padding: 1em;
+    }
+
+    @include mq(tablet) {
+      padding: 2em;
+    }
+
+    @include mq(quad) {
+      padding: 2em 3em;
+    }
+  }
+
+  hgroup {
+    @include mq(quad) {
+      padding-top: 6em;
+    }
+  }
+
+  h3 {
+    padding-bottom: 0.5em;
+  }
+
+  h1 {
+    width: 200px;
+    border-bottom: 2px solid white;
+    margin-bottom: 0.4em;
+    padding-bottom: 0.4em;
+  }
+
+  .resume_brief {
+    padding-top: 0;
+    padding-bottom: 0.5em;
+    line-height: 1.6;
+
+    @include mq(mobile) {
+      padding-left: 1em;
+      font-size: 1em;
+    }
+
+    @include mq(tablet) {
+      padding-left: 1.4em;
+      font-size: 1.4em;
+    }
+
+    @include mq(quad) {
+      padding: 0 2.3em;
+      font-size: 1.5rem;
+    }
+  }
+
+  .resume_contact {
+    dd {
+      padding: 0.5em 0;
+    }
+  }
+}

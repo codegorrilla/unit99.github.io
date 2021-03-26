@@ -1,0 +1,15 @@
+$base_color: #161616; //bg color
+
+//font color map
+$colors: (
+    header_color: #DCDBDB,
+    nav_color: #BBB7B7,
+    content_color: #fff
+);
+
+/* font colors */
+@each $name, $color in $colors{
+    .resume_#{$name}{
+        color: $color;
+    }
+}

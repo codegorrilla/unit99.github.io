@@ -1,0 +1,32 @@
+$default_font: 'Lato', sans-serif; //default font family
+
+//font weight map
+$font_weight: (
+    light: 300,
+    normal: 400,
+    bold: 700,
+    black: 900
+);
+
+//font size map
+$font_size: (
+    90pt: 5.5rem,
+    70pt: 3.5rem,
+    25pt: 1.5rem,
+    20pt: 1rem
+);
+
+/* font weight */
+@each $name, $weight in $font_weight{
+    .resume_#{$name}{
+        font-weight: $weight;
+    }
+}
+
+/* font size */
+@each $name, $size in $font_size{
+    .resume_#{$name}{
+        font-size: $size;
+    }
+}
+

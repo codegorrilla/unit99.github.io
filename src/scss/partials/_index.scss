@@ -1,0 +1,8 @@
+//forwarding all partials to main.scss
+@forward 'colors';
+@forward 'fonts';
+@forward 'grid';
+@forward 'svg';
+@forward 'hero';
+@forward 'about';
+@forward 'socialicons';

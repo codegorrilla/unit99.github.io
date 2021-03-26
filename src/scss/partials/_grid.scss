@@ -1,0 +1,87 @@
+//to calculate viewport breakpoints
+@use 'sass:map';
+
+$breakpoints:(
+    mobile: 375px,
+    tablet: 768px,
+    desktop: 992px,
+    quad: 1200px
+);
+
+//mixin for media query
+@mixin mq($key){
+    $size: map.get($breakpoints, $key);
+
+    @media(min-width: $size){
+        @content; //any css attribute
+    }
+}
+
+
+$columns: 12; //default column count
+
+/* flexbox based grid */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class^=col-]{
+    flex-basis: 100%;
+}
+
+//calculating column widths and offsets
+
+/* for mobile */
+@include mq(mobile){
+    @for $i from 1 through $columns{
+        .col_sm_#{$i}{
+            flex: 0 0 (100% / ($columns / $i));
+        }
+    
+        .col_offset_sm_#{$i}{
+            margin-left: 100% / ($columns / $i);
+        }
+    }
+}
+
+/* for tablet */
+@include mq(tablet){
+    @for $i from 1 through $columns{
+        .col_md_#{$i}{
+            flex: 0 0 (100% / ($columns / $i));
+        }
+    
+        .col_offset_md_#{$i}{
+            margin-left: 100% / ($columns / $i);
+        }
+    }
+}
+
+/* for desktop */
+@include mq(desktop){
+    @for $i from 1 through $columns{
+        .col_lg_#{$i}{
+            flex: 0 0 (100% / ($columns / $i));
+        }
+    
+        .col_offset_lg_#{$i}{
+            margin-left: 100% / ($columns / $i);
+        }
+    }
+}
+
+/* for quad HD desktops min. 1200px width */
+@include mq(quad){
+    @for $i from 1 through $columns{
+        .col_xl_#{$i}{
+            flex: 0 0 (100% / ($columns / $i));
+        }
+    
+        .col_offset_xl_#{$i}{
+            margin-left: 100% / ($columns / $i);
+        }
+    }
+}
+
+
