@@ -652,18 +652,65 @@ body {
   position: absolute;
   z-index: 2;
   top: 0;
-  left: -1000px;
   opacity: 1;
-  -webkit-transition: all ease-in 0.3s;
-  transition: all ease-in 0.3s;
+  -webkit-transition: all ease-in-out 0.4s;
+  transition: all ease-in-out 0.4s;
   background-color: #000;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(../img/background.jpg);
+  /* hide trigger */
 }
-.resume_about:target {
+@media (min-width: 375px) {
+  .resume_about {
+    left: -200vw;
+  }
+}
+@media (min-width: 1200px) {
+  .resume_about {
+    left: -80vw;
+  }
+}
+.resume_about .hide_trigger {
+  float: right;
+  opacity: 0;
+  padding: 2em 0;
+  cursor: pointer;
+  display: inline-block;
+  background-image: url(../svg/arrowleft.svg);
+  background-repeat: no-repeat;
+  background-position: left 50%;
+}
+.resume_about .hide_trigger span {
+  padding: 0 2em;
+  -webkit-transition: color linear 0.2s;
+  transition: color linear 0.2s;
+}
+@media (min-width: 375px) {
+  .resume_about .hide_trigger span {
+    color: transparent;
+  }
+}
+@media (min-width: 992px) {
+  .resume_about .hide_trigger span {
+    font-size: 1.2rem;
+    color: #818080;
+  }
+}
+@media (min-width: 1200px) {
+  .resume_about .hide_trigger span {
+    font-size: 1.5rem;
+  }
+}
+.resume_about .hide_trigger span:hover, .resume_about .hide_trigger span:focus {
+  color: white;
+}
+.resume_about.show {
   left: 0;
+}
+.resume_about.show .hide_trigger {
+  opacity: 1;
 }
 @media (min-width: 375px) {
   .resume_about {
@@ -692,6 +739,11 @@ body {
   .resume_about hgroup,
 .resume_about .resume_contact {
     padding: 2em 3em;
+  }
+}
+@media (min-width: 1200px) {
+  .resume_about hgroup {
+    padding-top: 6em;
   }
 }
 .resume_about h3 {

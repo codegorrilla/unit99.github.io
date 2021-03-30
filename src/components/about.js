@@ -1,5 +1,14 @@
 import React from "react"
 
+function closeAbout(e) {
+  e.preventDefault()
+
+  const hideTrigger = document.body.querySelector(".hide_trigger")
+  const aboutContent = document.body.querySelector(".resume_about")
+
+  hideTrigger.onClick = aboutContent.classList.remove("show")
+}
+
 //Name inside about content
 const NameText = props => {
   return (
@@ -51,14 +60,14 @@ const AboutContent = props => {
 
 export default function About() {
   return (
-      <section id="about" className="resume_about">
-        <button className="hide_trigger">
-          <span className="resume_bold">hide</span>
-        </button>
-        <AboutContent greetText="Hello.My name is">
-          Web UI designer from the city of Calcutta with a focus in user
-          experience , interaction design and front end web development.
-        </AboutContent>
-      </section>
+    <section id="about" className="resume_about">
+      <button className="hide_trigger" onClick={closeAbout}>
+        <span className="resume_bold">hide</span>
+      </button>
+      <AboutContent greetText="Hello.My name is">
+        Web UI designer from the city of Calcutta with a focus in user
+        experience , interaction design and front end web development.
+      </AboutContent>
+    </section>
   )
 }

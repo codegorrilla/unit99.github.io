@@ -6,7 +6,6 @@ import About from "../components/about"
 import SEO from "../components/seo"
 import LeftShape from "../svg/leftshape.inline.svg"
 
-
 //text container for hero section
 const HeroText = props => {
   return (
@@ -20,8 +19,6 @@ const HeroText = props => {
 }
 
 export default function Home() {
-  
-
   return (
     <div>
       <SEO title=" " description="" />

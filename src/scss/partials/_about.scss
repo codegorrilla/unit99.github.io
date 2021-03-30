@@ -6,7 +6,7 @@
   z-index: 2;
   top: 0;
   opacity: 1;
-  transition: all ease-in-out 0.8s;
+  transition: all ease-in-out 0.4s;
   background-color: #000;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,8 +34,7 @@
 
     span {
       padding: 0 2em;
-      transition: color linear 0.2s;
-      color: #818080;
+      transition: color linear 0.2s;      
       
       @include mq(mobile){
         color: transparent;
@@ -43,6 +42,7 @@
 
       @include mq(desktop){
         font-size: 1.2rem;
+        color: #818080;
       }
 
       @include mq(quad){
@@ -56,7 +56,7 @@
     }
   }
 
-  &:target {
+  &.show {
     left: 0;
 
     .hide_trigger {
