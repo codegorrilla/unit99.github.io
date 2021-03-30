@@ -47,6 +47,9 @@ const AboutContent = props => {
       <p className="resume_light resume_content_color resume_brief">
         {props.children}
       </p>
+      <Contact medium="Github">
+        <dd>github.com/Unit99</dd>
+      </Contact>
       <Contact medium="Email">
         <dd>feedback@unit99.com</dd>
       </Contact>

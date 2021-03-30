@@ -649,6 +649,7 @@ body {
 
 .resume_about {
   height: 100vh;
+  overflow: auto;
   position: absolute;
   z-index: 2;
   top: 0;
